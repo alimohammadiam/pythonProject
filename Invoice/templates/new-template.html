@@ -15,8 +15,8 @@
         </div>
 
         <div class="col-3 text-right">
-            <p>شماره سفارش: {{order_number}}</p>
-            <p> تاریخ سفارش: {{date}}</p>
+            <p>شماره سفارش: 5149</p>
+            <p> تاریخ سفارش: 1403/08/12</p>
         </div>
     </div>
     <div class="row">
@@ -47,14 +47,14 @@
             </thead>
             <tbody>
             <tr class="text-center"  >
-                <td colspan="4" style="border: none;">نام: {{customer_name}}</td>
-                <td colspan="4" style="border: none;">شماره اقتصادی: {{economical_number}}</td>
-                <td colspan="4" style="border: none;">کد ملی: {{national_code}}</td>
+                <td colspan="4" style="border: none;">نام: علی محمدی</td>
+                <td colspan="4" style="border: none;">شماره اقتصادی: 8724</td>
+                <td colspan="4" style="border: none;">کد ملی: 2560457415</td>
             </tr>
             <tr class="text-center" >
-                <td colspan="4" style="border: none;">آدرس: {{address}}</td>
-                <td colspan="4" style="border: none;">کد پستی: {{postal_code}}</td>
-                <td colspan="4" style="border: none;">تلفن: {{phone_number}}</td>
+                <td colspan="4" style="border: none;">آدرس: شیراز فسا </td>
+                <td colspan="4" style="border: none;">کد پستی: 81189119</td>
+                <td colspan="4" style="border: none;">تلفن: 09925126890</td>
             </tr>
 
             </tbody>
@@ -79,33 +79,61 @@
             </tr>
             </thead>
             <tbody>
-            {% for product in products %}
+            
             <tr class="text-center">
-                <td>{{loop.index}}</td>
-                <td>{{product.code}}</td>
-                <td>{{product.name}}</td>
-                <td>{{product.number}}</td>
-                <td>{{product.unit}}</td>
-                <td>{{product.unit_amount}}</td>
-                <td>{{product.total_amount}}</td>
-                <td>{{product.discount}}</td>
-                <td>{{product.discounted_amount}}</td>
-                <td>{{product.tax}}</td>
-                <td>{{product.total}}</td>
+                <td>1</td>
+                <td>54</td>
+                <td>لپ تاپ</td>
+                <td>2</td>
+                <td>54000000</td>
+                <td>54000000</td>
+                <td>108000000</td>
+                <td>2000000</td>
+                <td></td>
+                <td>10000</td>
+                <td>106010000</td>
             </tr>
-            {% endfor %}
+            
+            <tr class="text-center">
+                <td>2</td>
+                <td>45</td>
+                <td>تلفن همراه</td>
+                <td>1</td>
+                <td>عدد</td>
+                <td>45000000</td>
+                <td>45000000</td>
+                <td>2500000</td>
+                <td></td>
+                <td>10000</td>
+                <td>42510000</td>
+            </tr>
+            
+            <tr class="text-center">
+                <td>3</td>
+                <td>78</td>
+                <td>مانیتور سامسونگ</td>
+                <td>1</td>
+                <td>عدد</td>
+                <td>2600000</td>
+                <td>2600000</td>
+                <td>4000000</td>
+                <td></td>
+                <td>10000</td>
+                <td>-1390000</td>
+            </tr>
+            
             <tr>
                 <th colspan="5" class="text-right">جمع کل</th>
-                <th class="text-center">{{sum_total.sum_unit_amount}}</th>
-                <th class="text-center">{{sum_total.sum_total_amount}}</th>
-                <th class="text-center">{{sum_total.sum_discount}}</th>
-                <th class="text-center">{{sum_total.sum_discounted_amount}}</th>
-                <th class="text-center">{{sum_total.sum_tax}}</th>
-                <th class="text-center">{{sum_total.s_total}}</th>
+                <th class="text-center">101600000</th>
+                <th class="text-center">155600000</th>
+                <th class="text-center">8500000</th>
+                <th class="text-center"></th>
+                <th class="text-center">30000</th>
+                <th class="text-center">147130000</th>
             </tr>
             <tr>
-                <th colspan="5" class="text-right">شرایط و نحوه فروش: {{terms_of_sale}}</th>
-                <th colspan="6" class="text-right">توضیحات: {{description}}</th>
+                <th colspan="5" class="text-right">شرایط و نحوه فروش: قسطی</th>
+                <th colspan="6" class="text-right">توضیحات: خدا بده برکت </th>
             </tr>
             <tr style="padding: 60px 0;  height: 150px">
                 <td colspan="5" class="text-right">مهر و امضا فروشنده</td>
