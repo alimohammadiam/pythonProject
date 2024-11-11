@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <form action="{{ url_for('register') }}" method="POST">
+        نام کاربری:
+        <input type="text" name="username" required>
+        رمز عبور:
+        <input type="password" name="password" required>
+        تکرار رمز عبور:
+        <input type="password" name="confirm_password" required>
+        <button type="submit">ثبت نام</button>
+    </form>
+
+    {% if error %}
+        {{ error }}
+    {% endif %}
+
+</body>
+</html>
