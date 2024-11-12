@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port)
+
+        socket.on('message', function (data){
+            var p = document.createElement('p');
+            p.innerHTML = data.username + ': ' + data.message;
+            document.querySelector('#message').appendChild(p);
+        });
+
+        function sendMessage(){
+            var messageInput = document.querySelector('#messageInput');
+            var message = messageInput.value;
+            if (message !== ''){
+                socket.emit('message', message);
+                messageInput.value = '';
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+    <div id="message"></div>
+    <br>
+    <br>
+    <input type="text" id="messageInput" placeholder="پیام خود را بنویسید ...">
+    <button onclick="sendMessage()"> ارسال </button>
+
+</body>
+</html>

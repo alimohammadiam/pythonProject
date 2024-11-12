@@ -22,7 +22,7 @@ def register():
         else:
             users[username] = {
                 'username': username,
-                'password': password,
+                'password': generate_password_hash(password),
             }
             return redirect(url_for('login'))
 
@@ -45,6 +45,22 @@ def login():
 
     return render_template('login.html')
 
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('index'))
+
+
+@app.route('/')
+def index():
+    if 'username' in session:
+        return render_template('index.html', username=session['username'])
+    return redirect(url_for('login'))
+
+@socketio.on('message')
+def handel_message(message):
+    emit('message', {'username': session['username'], 'message': message}, broadcast=True)
 
 
 if __name__ == '__main__':
