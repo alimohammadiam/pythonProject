@@ -58,6 +58,7 @@ def index():
         return render_template('index.html', username=session['username'])
     return redirect(url_for('login'))
 
+
 @socketio.on('message')
 def handel_message(message):
     emit('message', {'username': session['username'], 'message': message}, broadcast=True)
