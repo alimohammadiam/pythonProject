@@ -26,4 +26,5 @@ for path in Path('eng-img').iterdir():
             text += eng
         text += '\n' + (100 * '_') + '\n'
 
-print(text)
+with open("text.txt", "w", encoding="utf8") as f:
+    f.write(text)
