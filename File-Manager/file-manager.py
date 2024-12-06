@@ -77,7 +77,36 @@ def make_directory():
         messagebox.showinfo("!خطا", "!دایرکتوری ساخته نشد")
 
 
+def remove_directory():
+    path = directory_open_box()
+    try:
+        os.rmdir(path)
+    except:
+        messagebox.showinfo("!خطا", "!دایرکتوری حذف نشد")
 
+
+def list_file():
+    path = directory_open_box()
+    file_list = sorted(os.listdir(path))
+    for i in file_list:
+        print(i)
+
+
+window = Tk()
+window.title("مدیریت فایل")
+window.configure(bg="black")
+window.geometry("500x700")
+Label(window, text="چه کاری انجام دهم؟").pack()
+Button(window, command=open_file, text="باز کردن فایل", fg="blue", activebackground="red", bg="white").pack()
+Button(window, command=copy_file, text="کپی کردن فایل", fg="blue", activebackground="red", bg="white").pack()
+Button(window, command=delete_file, text="حذف کردن فایل", fg="blue", activebackground="red", bg="white").pack()
+Button(window, command=rename_file, text="تغییر نام فایل", fg="blue", activebackground="red", bg="white").pack()
+Button(window, command=move_file, text="انتقال فایل", fg="blue", activebackground="red", bg="white").pack()
+Button(window, command=make_directory, text="ساخت دایرکتوری", fg="blue", activebackground="red", bg="white").pack()
+Button(window, command=remove_directory, text="حذف دایرکتوری", fg="blue", activebackground="red", bg="white").pack()
+Button(window, command=list_file, text="لیست فایل های موجود", fg="blue", activebackground="red", bg="white").pack()
+
+window.mainloop()
 
 
 
