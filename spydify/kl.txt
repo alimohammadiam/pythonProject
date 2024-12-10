@@ -1,0 +1,1 @@
+a, l, i, [Space], [Enter], [Control-R], Alt-r, [shift], [BackSpace], [BackSpace], [shift], H, e, l, o, o, [Space], w, o, r, d, [Space], [Enter], [Control-L], Key.esc
