@@ -65,5 +65,5 @@ def handel_message(message):
 
 
 if __name__ == '__main__':
-    app.secret_key = 'adlwqje234FJEDOWEedwsflwhj5i4353ioh645'
+    app.secret_key = 'vdedvkljfaedv1534867'
     socketio.run(app, debug=True)
