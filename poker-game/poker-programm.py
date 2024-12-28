@@ -16,13 +16,13 @@ def hand_rank(hand):
         return 8, max(ranks)
     elif kind(4, ranks):
         return 7, kind(4, ranks), kind(1, ranks)
-    elif kind(3, ranks) and kind(3, ranks):
+    elif kind(3, ranks) and kind(2, ranks):
         return 6, kind(3, ranks), kind(2, ranks)
     elif flush(hand):
         return 5, ranks
     elif straight(ranks):
         return 4, max(ranks)
-    elif kind(2, ranks):
+    elif kind(3, ranks):
         return 3, max(ranks), ranks
     elif two_pair(ranks):
         return 2, two_pair(ranks), ranks
@@ -101,12 +101,31 @@ def test():
     return 'All Tests Passes'
 
 
-print(test())
+# print(test())
 
 
+def hand_percentage(n=700 * 1000):
+    hand_name = [
+        'straight flush',
+        'four of kind',
+        'full house',
+        'flush',
+        'straight',
+        'three of kind',
+        'two pair',
+        'one pair',
+        'high card'
+    ]
+    counts = [0] * 9
+    for i in range(n // 10):
+        for hand in deal(10):
+            ranking = hand_rank(hand)[0]
+            counts[ranking] += 1
+    for i in reversed(range(9)):
+        print('{0:15}: {1:6.4f} %'.format(hand_name[i], 100.0*counts[8 - i]/n))
 
 
-
+hand_percentage()
 
 
 

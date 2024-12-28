@@ -23,5 +23,29 @@ def countdown(n):
     print('lift out!')
 
 
+def galb():
+    a, b, size = 0, 0, 15
+    a = size // 2
+    while a <= size:
+        for b in range(1, b < size - a, 2):
+            print('a')
+        for b in range(1, b <= a, 1):
+            print('A')
+        for b in range(1, b <= size - 1, 1):
+            print(' ')
+        for b in range(1, b <= a-1, 1):
+            print('A')
+        print('')
+        a += 2
+    a = size
+    while a >= 0:
+        for b in range(a, b < size, 1):
+            print(' ')
+        for b in range(1, b <= (a * 2 - 1), 1):
+            print('B')
+        print()
+        a -= 1
+
+
 if __name__ == '__main__':
-    countdown(10)
+    galb()
