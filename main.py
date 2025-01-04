@@ -47,5 +47,72 @@ def galb():
         a -= 1
 
 
+def question_chert_shirohi():
+    #  Q1
+    n = int(input('how meny number do you want: '))
+    nummbers = []
+    for i in range(n):
+        num = int(input('>> '))
+        nummbers.append(num)
+    maximum = max(nummbers)
+    if maximum % 5 == 0:
+        for i in range(1000, 100, -1):
+            if i % 6 == 0:
+                print(i)
+                break
+    else:
+        n2 = int(input('Enter a nummber to factorial: '))
+        s = 1
+        for i in range(n2, 1, -1):
+            s *= i
+        print(f'factorial {n2} is {s}')
+
+    #  Q2
+    sum = 0
+    for i in range(2, 13):
+        if i % 2 != 0:
+            sum += i
+    print(sum)
+
+    #  Q3
+    aa = ['red', 12, 'salam', 40, 'ww', 78, 12, 50, 45, 75, 'c++']
+    mm = []
+    for i in aa:
+        if i.isdigit():
+            mm.append(i)
+    # mm = [i for i in aa if i.isdigit()]
+
+    #  Q4
+    my_list = ['red', 58, 'salam', 40, 'ww', 78, 'cpp']
+    print(my_list[-1::-1])
+    print(my_list[-1:-6:-2])
+    my_list.insert(3, '20km')
+    my_list.remove(78)
+    print(my_list)
+
+
 if __name__ == '__main__':
-    galb()
+    pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
